@@ -1,7 +1,12 @@
 //Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
+var confirmLength = prompt(
+    "How many characters would you like for your password? (8-128 characters)"
+  );
+  var confirmLowercase = confirm("Would you like to include lower case letters?");
+  var confirmSymbols = confirm("Would you like to include symbols?");
+  var confirmNumbers = confirm("Would you like to include numbers?");
+  var confirmUppercase = confirm("Would you like to include upper case letters?");
 
 // get random lower case letter function
 function getRandomLowerCase() {
@@ -22,7 +27,7 @@ function getRandomLowerCase() {
   function getRandomSymbol() {
     const symbols = "!#$%&()*+,-./:;<=>?@";
     return symbols [Math.floor(Math.random * symbols.length)];
-  
+
   }
 
 
