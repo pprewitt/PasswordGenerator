@@ -87,4 +87,9 @@ function getRandomLowerCase() {
     passwordText.value = password;
   }
 
-  
+  function copyButton() {
+    document.querySelector("#password").select();
+    document.execCommand('copy');
+    alert("Copied password to clipboard");
+  }
+  copyBtn.addEventListener("click", copyButton);
