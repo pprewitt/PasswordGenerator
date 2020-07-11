@@ -8,6 +8,9 @@ var confirmLength = prompt(
   var confirmNumbers = confirm("Would you like to include numbers?");
   var confirmUppercase = confirm("Would you like to include upper case letters?");
 
+ //length value 
+  var lengthValue = parseInt(confirmLength)
+  
 // get random lower case letter function
 function getRandomLowerCase() {
     return String.fromCharCode(Math.floor(Math.random()*26) + 97);
