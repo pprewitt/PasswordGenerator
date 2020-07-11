@@ -35,24 +35,27 @@ function getRandomLowerCase() {
     return String.fromCharCode(Math.floor(Math.random()*15) + 33);
 
   }
-  //writing password function 
+  //rules for writing password function 
   function generatePassword() {
     if (lengthValue >= 8 && lengthValue <= 128) {
       var userEntry = [];
-  
+  //pushes symbols
       if (confirmSymbols === true) {
         userEntry.push(getRandomSymbol);
       }
+  //pushes uppercase 
       if (confirmUppercase === true) {
         userEntry.push(getRandomUpperCase);
       }
+  //pushes numbers
       if (confirmNumbers === true) {
         userEntry.push(getRandomNumber);
       }
+ //pushes lowercase
       if (confirmLowercase === true) {
         userEntry.push(getRandomLowerCase);
       }
-      // user choices are all false, return instructions to start over
+  // user choices are all false, return instructions to start over
       if (
             
         confirmSymbols === false &&
@@ -67,7 +70,7 @@ function getRandomLowerCase() {
     } else {
       alert("Please choose a password with a length of 8-128. Refresh and try again.");
     }
-    
+  //loops to length value  
     var pass = "";
     for (var i = 0; i < lengthValue; i++) {
       var newRandom = Math.floor(Math.random() * userEntry.length);
@@ -76,17 +79,13 @@ function getRandomLowerCase() {
     return pass;
     
   }
-  
-  // Assignment Code
-  var generateBtn = document.querySelector("#generate");
-  
-  
+  //writes password assembly to html password element  
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
   
     passwordText.value = password;
   }
-
+//copy button function
   function copyButton() {
     document.querySelector("#password").select();
     document.execCommand('copy');
